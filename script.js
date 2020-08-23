@@ -27,6 +27,8 @@ document.onkeydown = function (e) {
     if (e.keyCode == 37) {
         dino = document.querySelector('.dino');
         dinoX = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
+        if (dinoX < -112)
+            return;
         dino.style.left = (dinoX - 112) + "px";
     }
 }
